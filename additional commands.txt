@@ -15,3 +15,6 @@ you have to do it every time . So reduce your complexity just run
 	npm run watch
 
 This will watching  every change you made and update automatically
+
+ctrl+u to view source code
+ctrl+f5 to delete cache

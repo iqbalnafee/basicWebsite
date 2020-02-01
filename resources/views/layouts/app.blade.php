@@ -6,9 +6,19 @@
 	</head>
 	<body>
 
-		@yield('content')
+		@include('inc.navbar')
 
-		@include('inc.sidebar')
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-lg-4">
+					@include('inc.sidebar')
+				</div>
+				<div class="col-md-8 col-lg-8">
+					@yield('content')
+				</div>
+			</div>
+		</div>	
 
 		{{--The @include directive includes the contents of sidebar.blade.php which is located at inc folder--}}
 
