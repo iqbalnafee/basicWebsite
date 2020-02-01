@@ -1,0 +1,7 @@
+mix commands:
+
+to load content of app.css file please include these commands:
+
+1)composer require laravel/ui --dev 
+2) php artisan ui bootstrap
+3) npm install && npm run dev
