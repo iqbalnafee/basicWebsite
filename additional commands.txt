@@ -1,7 +1,17 @@
-mix commands:
 
-to load content of app.css file please include these commands:
+
+After creating laravel project and to load content of app.css file please include these commands:
 
 1)composer require laravel/ui --dev 
 2) php artisan ui bootstrap
 3) npm install && npm run dev
+
+to see any changes made in  css files in e.g. /resources/sass/variables please run those mix commands
+
+	npm run dev
+
+you have to do it every time . So reduce your complexity just run
+	
+	npm run watch
+
+This will watching  every change you made and update automatically
