@@ -19,6 +19,7 @@ class MessagesController extends Controller
     	]);
 
     	$message = new Message;
+    	//here Message is the Message.php which is located in app/Message.php
 		$message->name = $request->input('name'); 
 		$message->email= $request->input('email'); 
 		$message->message = $request->input('message'); 
@@ -32,5 +33,12 @@ class MessagesController extends Controller
 
     	/*return $request->input("name");
     	here this $request->input("name") return the input in the name field*/
+    }
+
+    public function getMessages()
+    {
+    	$messages = Message::all();
+
+    	return view('messages')->with('messages',$messages);
     }
 }

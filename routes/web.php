@@ -26,5 +26,7 @@ Route::get('/contact', function () {
 
 Route::post('/contact/submit', 'MessagesController@submit'); 
 
+Route::get('/messages', 'MessagesController@getMessages'); 
+
 /*MessagesController will be loacted at app/http/controllers/MessagesController.php
  To create this controller we should run command "php artisan make:controller MessagesController"--}}*/

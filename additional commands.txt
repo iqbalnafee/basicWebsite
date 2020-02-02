@@ -81,3 +81,15 @@ And in error message file just put these codes:
 
 	@endif
 
+
+To view messages what we just submitted just fillow this instructions
+
+put the following codes in MessageController.php
+
+	public function getMessage()
+    	{
+    		$messages = Message::all();
+    	
+    		return view('messages')->with('messages',$messages);
+    	}
+
