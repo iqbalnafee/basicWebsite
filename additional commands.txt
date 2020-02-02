@@ -18,3 +18,66 @@ This will watching  every change you made and update automatically
 
 ctrl+u to view source code
 ctrl+f5 to delete cache
+
+
+To  create database in laravel:
+
+We first make change in out .env file
+
+Set this parameters:
+DB_DATABASE=YOUR_DATABASE_NAME
+DB_USERNAME=root
+DB_PASSWORD= 
+
+
+To create table:
+
+	php artisan make:model Message -m
+
+here Message is the table and -m create migration files
+
+Here Message.php is located in the /app/Message.php 
+
+And corresponding migration file is located in the /database/migrations
+
+To create schema or table columns we should put our code in migrations folder's create_message_table.php table
+
+Now put these commands
+
+	php artisan migrate
+
+
+To create entries in your message table go to your controller or where you handle your submitted inputs. In our case it
+it is MessageController.php
+
+In MessageController.php add use App\Message
+
+To get all submitted inputs :
+
+	$message = new Message;
+	$message->name = $request->input('name'); 
+	$message->email= $request->input('email'); 
+	$message->message = $request->input('message'); 
+	$message->save();
+
+After creating your inputs in the database we should redirect to our homepage. to do that just add extra line
+	
+	return redirect('/');
+
+If you show additional messages just put 
+
+	return redirect('/')->with('success','message sent');
+
+
+And in error message file just put these codes:
+
+	@if(session('success'))
+
+		<div class="alert alert-success">
+		
+			{{'success'}}
+
+		</div>
+
+	@endif
+

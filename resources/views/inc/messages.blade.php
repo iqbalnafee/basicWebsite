@@ -10,4 +10,14 @@
 
 @endif
 
+@if(session('success'))
+
+	<div class="alert alert-success">
+		
+		{{'Message sent successfully'}}
+
+	</div>
+
+@endif
+
 {{--To show all errors--}}
